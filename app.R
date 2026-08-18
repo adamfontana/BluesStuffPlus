@@ -14,7 +14,7 @@ download_private_rds <- function(repo_id, filepath) {
   response <- httr::GET(
     url,
     httr::add_headers(Authorization = paste("Bearer", api_key)),
-    timeout(60)
+    httr::timeout(60)
   )
 
   if (httr::status_code(response) == 200) {
